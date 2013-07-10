@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="reset.css" />
+<!-- jQuery 1.10.1 : Start -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<!-- jQuery 1.10.1 : End -->
+
+<!-- Hiding Safari User Interface Components -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<!-- Changing the Status Bar Appearance -->
+<meta name="apple-mobile-web-app-status-bar-style" content="translucent black" />
+<!-- Not letterboxed on iPhone 5 -->
+<meta name="viewport"
+      content="initial-scale=1.0,user-scalable=no,maximum-scale=1">
+<meta name="viewport"
+      content="width=320.1">
+
+
+	  <style>
+	  		body
+	  		{
+		  		background: gray;
+	  		}
+			#topframe 
+			{
+				height: 6px;
+				top: 0; 
+				padding: 0;
+				background-image: url("img/topframeBack.png"); 
+				-webkit-background-size: 1px 6px;
+				background-repeat:repeat-x;
+			}
+			#topframe div
+			{
+				position: absolute;
+				top: 0;
+				height: 6px;
+				width: 5.5px;
+				-webkit-background-size: cover;
+			}
+			#topframe div.left 
+			{
+				left: 0;
+				background-image: url("img/topframeLeft.png"); 
+			}
+			#topframe div.right 
+			{	
+				right: 0;			
+				background-image: url("img/topframeRight.png"); 
+			}	
+			
+			#bottomframe 
+			{
+				height: 6px; 
+				bottom: 0; 
+				background-image: url("img/bottomframeBack.png"); 
+				-webkit-background-size: 1px 6px;
+				background-repeat:repeat-x;
+			}
+			#bottomframe div
+			{
+				position: absolute;
+				bottom: 0;
+				height: 6px;
+				width: 5.5px;
+				-webkit-background-size: cover;
+			}
+			#bottomframe div.left 
+			{
+				left: 0;
+				background-image: url("img/bottomframeLeft.png"); 
+			}
+			#bottomframe div.right 
+			{	
+				right: 0;			
+				background-image: url("img/bottomframeRight.png"); 
+			}
+			.frame 
+			{
+				position: fixed; 
+				z-index: 10000; 
+				width: 100%; 
+				left: 0; 
+				background-repeat: no-repeat;
+			}
+			
+			.block 
+			{
+				display: block; 
+				background: gray;
+			}
+			#primaryContent{
+				color: white;
+				text-align: center;
+				font-size: 20px;
+			}
+		</style>	
+		<script src="weather.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function() {
+			$(".block").css("height",window.innerHeight+"px");
+			$(".block").css("width","100%");
+		});s
+		// Listen for orientation changes
+		window.addEventListener("orientationchange", function() {
+			$(".block").css("height",window.innerHeight+"px");
+			$(".block").css("width","100%");
+		}, false);	
+		</script>
+		<title></title>	
+	</head>
+	<body>
+		<div id="topframe" class="frame">
+			<div class="left"></div>
+			<div class="right"></div>
+		</div>
+		<div id="bottomframe" class="frame">
+			<div class="left"></div>
+			<div class="right"></div>
+		</div>
+		<div id="primaryContent" class="block">
+		</div>
+	</body>
+</html>
